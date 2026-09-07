@@ -266,10 +266,25 @@ footer{background:var(--soft);border-top:1px solid var(--line);padding-top:38px;
 @media(max-width:760px){.dock{display:grid;}body{padding-bottom:50px;}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
 
-/* real project images */
-.hero-real-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-.scene-real-img,.product-real-img{width:100%;height:100%;object-fit:cover;display:block;}
+/* v3 real image blocks */
+.v3-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.v3-gallery .item{border:1px solid var(--line);background:var(--card);overflow:hidden}
+.v3-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.v3-gallery h3{padding:14px 16px 4px}
+.v3-gallery p{padding:0 16px 16px;color:var(--ink2);font-size:14px}
+@media(max-width:800px){.v3-gallery{grid-template-columns:1fr}}
 
+/* V5 conversion blocks */
+.v5-box{background:var(--card);border:1px solid var(--line);padding:24px;margin-top:24px}
+.v5-box h3{font-size:22px;margin-bottom:8px}
+.v5-box p{color:var(--ink2)}
+.v5-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.v5-products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.v5-product{background:var(--card);border:1px solid var(--line);overflow:hidden}
+.v5-product img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.v5-product div{padding:16px}
+.v5-product p{color:var(--ink2);font-size:14px}
+@media(max-width:800px){.v5-products{grid-template-columns:1fr}}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -323,11 +338,11 @@ footer{background:var(--soft);border-top:1px solid var(--line);padding-top:38px;
 </div></header>
 
 <section class="hero" id="top">
-  <img class="hero-real-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80" alt="Công trình nhà phố sử dụng vật liệu giả gỗ ngoài trời">
+  <svg class="bgart" id="heroArt" viewBox="0 0 1200 540" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
   <div class="veil"></div>
   <div class="wrap hero-in">
-    <p class="eyebrow">Hàng chính hãng · Có sẵn kho</p>
-    <h1>Tấm ốp, lam che nắng, sàn gỗ ngoài trời<br><em>đẹp như gỗ thật, bền hơn gỗ thật</em></h1>
+    <p class="eyebrow">Vật liệu chính hãng · Tư vấn theo công trình</p>
+    <h1>Tấm Xi Măng Giả Gỗ Conwood<br><em>Giải pháp thay thế gỗ tự nhiên cho không gian ngoài trời</em></h1>
     <ul class="ticks">
       <li><svg width="17" height="17" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#F6B860"/><path d="M6 10.3l2.6 2.6L14.2 7.3" stroke="#3A2410" stroke-width="2.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Mưa nắng quanh năm vẫn không mối mọt, không cong vênh</li>
       <li><svg width="17" height="17" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#F6B860"/><path d="M6 10.3l2.6 2.6L14.2 7.3" stroke="#3A2410" stroke-width="2.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Đủ quy cách cho mặt tiền, trần hiên, sàn, lam và hàng rào</li>
@@ -348,22 +363,80 @@ footer{background:var(--soft);border-top:1px solid var(--line);padding-top:38px;
   <div class="ci"><i><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 2v4M10 14v4M2 10h4M14 10h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="10" cy="10" r="3.2" stroke="currentColor" stroke-width="1.7"/></svg></i><span><b>Hỗ trợ thi công</b><small>Có bản vẽ, hướng dẫn lắp đặt</small></span></div>
 </div></div>
 
+
+
+<section class="s line">
+<div class="wrap">
+<div class="v5-box">
+<h3>Bạn chưa biết nên chọn loại Conwood nào?</h3>
+<p>Chỉ cần gửi ảnh vị trí cần làm (mặt tiền, ban công, sân vườn...) hoặc kích thước dự kiến. Chúng tôi sẽ hỗ trợ tư vấn mẫu phù hợp, số lượng vật tư và chi phí dự kiến.</p>
+<div class="v5-cta">
+<a class="btn b-red" href="#bao-gia">Nhận tư vấn miễn phí</a>
+<a class="btn b-line" href="tel:0906830034">Gọi 0906 830 034</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="s tint line" id="cong-trinh">
+<div class="wrap">
+<div class="shead">
+<p class="eyebrow">Công trình thực tế</p>
+<h2>Ứng dụng xi măng giả gỗ trong thực tế</h2>
+<p class="lead">Hình ảnh tham khảo để khách hàng dễ hình dung vật liệu khi ứng dụng cho nhà phố, biệt thự và không gian ngoài trời.</p>
+</div>
+<div class="v3-gallery">
+<div class="item">
+<img loading="lazy" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Nhà phố sử dụng vật liệu giả gỗ">
+<h3>Ốp mặt tiền</h3>
+<p>Giải pháp tạo điểm nhấn cho nhà phố và biệt thự.</p>
+</div>
+<div class="item">
+<img loading="lazy" src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80" alt="Lam trang trí ngoài trời">
+<h3>Lam che nắng</h3>
+<p>Ứng dụng cho mặt dựng, ban công, pergola.</p>
+</div>
+<div class="item">
+<img loading="lazy" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80" alt="Sàn ngoài trời sân vườn">
+<h3>Sàn ngoài trời</h3>
+<p>Sân vườn, hồ bơi, sân thượng.</p>
+</div>
+</div>
+</div>
+</section>
+
 <section class="s" id="ung-dung">
   <div class="wrap">
     <div class="shead">
       <p class="eyebrow">Ứng dụng</p>
-      <h2>Xi măng giả gỗ dùng được ở đâu?</h2>
+      <h2>Conwood có thể ứng dụng cho những hạng mục nào?</h2>
       <p class="lead">Sáu vị trí khách của chúng tôi làm nhiều nhất. Mỗi vị trí có bản rộng và độ dày riêng.</p>
     </div>
     <div class="scenes" id="scenes"></div>
   </div>
 </section>
 
+
+<section class="s line">
+<div class="wrap">
+<div class="shead">
+<p class="eyebrow">Sản phẩm nổi bật</p>
+<h2>Các dòng Conwood được sử dụng phổ biến</h2>
+<p class="lead">Lựa chọn theo từng nhu cầu: mặt tiền, lam trang trí, sàn ngoài trời hoặc các chi tiết hoàn thiện.</p>
+</div>
+<div class="v5-products">
+<div class="v5-product"><img loading="lazy" src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80" alt="Lap Siding Conwood"><div><h3>Lap Siding</h3><p>Phù hợp ốp mặt tiền, tường ngoài trời và các mảng nhấn kiến trúc.</p></div></div>
+<div class="v5-product"><img loading="lazy" src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=800&q=80" alt="Siding Conwood"><div><h3>Siding</h3><p>Bề mặt phẳng, phù hợp nhiều phong cách nhà hiện đại.</p></div></div>
+<div class="v5-product"><img loading="lazy" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80" alt="Sàn Deck ngoài trời"><div><h3>Sàn Deck ngoài trời</h3><p>Dùng cho sân vườn, hồ bơi, sân thượng và khu nghỉ dưỡng.</p></div></div>
+</div>
+</div>
+</section>
+
 <section class="s tint line" id="san-pham">
   <div class="wrap">
     <div class="shead">
       <p class="eyebrow">Sản phẩm</p>
-      <h2>Quy cách có sẵn kho</h2>
+      <h2>Danh mục sản phẩm Conwood</h2>
     </div>
     <div class="tabs" id="tabs" role="tablist"></div>
     <div class="pgrid" id="pgrid"></div>
@@ -396,7 +469,7 @@ footer{background:var(--soft);border-top:1px solid var(--line);padding-top:38px;
   <div class="wrap">
     <div class="shead">
       <p class="eyebrow">Ưu điểm</p>
-      <h2>Đẹp như gỗ, mà không phải lo như gỗ</h2>
+      <h2>Vẻ đẹp của gỗ, sự bền bỉ của vật liệu hiện đại</h2>
     </div>
     <div class="g3">
       <div class="why"><i><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M4 10.5l3.5 3.5L16 5.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i><h3>Không lo mối mọt</h3><p>Nền vật liệu là xi măng nên mối mọt không đụng tới. Đây là lý do nhiều nhà chuyển từ gỗ thịt sang.</p></div>
@@ -430,7 +503,7 @@ footer{background:var(--soft);border-top:1px solid var(--line);padding-top:38px;
     <h2>Xi măng giả gỗ là gì và làm được những gì cho ngôi nhà?</h2>
     <p class="meta">Kiến thức vật liệu · Tổng Kho Xi Măng Giả Gỗ</p>
 
-    <p>Nhiều gia chủ mê vẻ ấm của gỗ nhưng ngại làm gỗ ngoài trời. Ốp gỗ thịt lên mặt tiền hướng tây được vài mùa là bạc màu, nứt thớ. Làm sàn gỗ ở sân vườn thì mưa xuống ẩm chân, mối mọt kéo tới. Xi măng giả gỗ ra đời để giải bài toán đó: giữ nguyên vẻ gỗ nhưng ứng xử ngoài trời theo cách của vật liệu xi măng.</p>
+    <p>Bạn yêu thích vẻ đẹp ấm áp của gỗ nhưng lo lắng về độ bền khi sử dụng ngoài trời? Ốp gỗ thịt lên mặt tiền hướng tây được vài mùa là bạc màu, nứt thớ. Làm sàn gỗ ở sân vườn thì mưa xuống ẩm chân, mối mọt kéo tới. Xi măng giả gỗ ra đời để giải bài toán đó: giữ nguyên vẻ gỗ nhưng ứng xử ngoài trời theo cách của vật liệu xi măng.</p>
 
     <h3>Nó được làm từ gì?</h3>
     <p>Theo công bố của nhà sản xuất, thành phần chính là xi măng Portland kết hợp sợi cellulose, ép định hình rồi tạo vân gỗ lên bề mặt. Sản phẩm không dùng cát và không có amiăng. Điểm khác biệt quan trọng so với các loại tấm phủ vân: vân gỗ nằm ngay trên mặt tấm chứ không phải một lớp film dán bên ngoài, nên khi cưa cắt hay va chạm, cạnh tấm vẫn cùng màu, không lộ cốt lạ.</p>
@@ -477,6 +550,13 @@ footer{background:var(--soft);border-top:1px solid var(--line);padding-top:38px;
     <p>Bạn không cần thuộc hết quy cách. Cách nhanh nhất là chụp một tấm ảnh vị trí muốn làm, gửi cho chúng tôi kèm diện tích ước chừng. Chúng tôi sẽ nói cho bạn biết nên dùng nhóm nào, bản rộng bao nhiêu, cần bao nhiêu tấm và hết khoảng bao nhiêu tiền.</p>
     <p class="muted">Gọi <a href="tel:0906830034" style="color:var(--red);font-weight:700;text-decoration:none">0906 830 034</a> hoặc nhắn Zalo cùng số, chúng tôi tư vấn miễn phí.</p>
   </div>
+
+<div class="v5-box">
+<h3>Cần tư vấn cho công trình của bạn?</h3>
+<p>Gửi ảnh thực tế, chúng tôi sẽ giúp bạn chọn loại tấm phù hợp với vị trí sử dụng.</p>
+<div class="v5-cta"><a class="btn b-red" href="#bao-gia">Gửi ảnh nhận tư vấn</a></div>
+</div>
+
 </section>
 
 <section class="s line" id="faq">
@@ -500,8 +580,8 @@ footer{background:var(--soft);border-top:1px solid var(--line);padding-top:38px;
   <div class="wrap fgrid">
     <div>
       <p class="eyebrow">Báo giá miễn phí</p>
-      <h2>Để lại số, chúng tôi gọi lại ngay</h2>
-      <p class="lead" style="margin-top:11px">Chưa biết chọn loại nào cũng không sao. Chỉ cần một tấm ảnh mặt tiền hoặc diện tích ước chừng là chúng tôi tính được số tấm và chi phí cho bạn.</p>
+      <h2>Gửi thông tin công trình, chúng tôi tư vấn giải pháp phù hợp</h2>
+      <p class="lead" style="margin-top:11px">Bạn chỉ cần gửi ảnh vị trí cần làm hoặc diện tích dự kiến. Chúng tôi sẽ hỗ trợ chọn mẫu phù hợp, tính số lượng và báo chi phí dự kiến.</p>
       <div class="finfo">
         <div><i><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M6.2 2.8l2 3.4-1.7 1.8c.8 1.9 2.6 3.7 4.5 4.5l1.8-1.7 3.4 2-1 2.6c-.3.7-1 1-1.7.9C7.7 15.5 4.5 12.3 3.5 6.5c-.1-.7.2-1.4.9-1.7l1.8-.7z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></i><span><b>0906 830 034</b><small>Gọi hoặc nhắn Zalo, hỗ trợ cả ngoài giờ</small></span></div>
         <div><i><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 18s6-5.2 6-10a6 6 0 10-12 0c0 4.8 6 10 6 10z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="10" cy="8" r="2.3" stroke="currentColor" stroke-width="1.6"/></svg></i><span><b>122/33 Đường Lê Văn Thịnh</b><small>Phường Bình Trưng, TP. Hồ Chí Minh — mời bạn ghé xem mẫu thật</small></span></div>
@@ -628,16 +708,6 @@ footer{background:var(--soft);border-top:1px solid var(--line);padding-top:38px;
       R(x+w/2-2,y+5,4,h-10,'#F3F1EC')+R(x+5,y+h/2-2,w-10,4,'#F3F1EC')+
       R(x+5,y+5,w-10,h*.35,'rgba(255,255,255,.18)');
   }
-
-  
-var SCENE_IMAGES={
- facade:"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80",
- ceiling:"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80",
- pool:"https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80",
- slats:"https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80",
- fence:"https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=900&q=80",
- detail:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80"
-};
 
   var SCENES={
   /* 1. facade */
@@ -782,16 +852,6 @@ var SCENE_IMAGES={
   /* ===== products ===== */
   var CATS=[["all","Tất cả"],["lap","Lap Siding"],["sid","Siding"],["lam","Lam che nắng"],["deck","Sàn Deck"],["fen","Hàng rào"],["tran","Trần &amp; diềm mái"]];
   var TONES=["#8A5A31","#6E4326","#A0713F","#B08347","#7A5334","#4E4741"];
-  
-var PRODUCT_IMAGES={
- lap:"https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=700&q=80",
- sid:"https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=700&q=80",
- lam:"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=700&q=80",
- deck:"https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=700&q=80",
- fen:"https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=700&q=80",
- tran:"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=700&q=80"
-};
-
   var P=[
     ["lap","Tấm ốp Lap Siding G0","Ốp tường ngoài trời, mặt tiền","Bản 6\" · vân gỗ nổi","Bán chạy",0],
     ["lap","Tấm ốp Lap Siding G1","Ốp tường ngoài trời, mặt tiền","Bản 6\" · vân gỗ nổi","",1],
@@ -835,7 +895,7 @@ var PRODUCT_IMAGES={
       var on=picked.indexOf(p[1])>-1;
       var el=document.createElement("article");
       el.className="pc"+(on?" on":"");
-      el.innerHTML='<div class="pth"><img class="product-real-img" loading="lazy" src="'+PRODUCT_IMAGES[p[0]]+'" alt="'+p[1]+'">'+
+      el.innerHTML='<div class="pth">'+art(p[0],320,240,TONES[p[5]])+
         (p[4]?'<span class="pbadge'+(p[4]==="Mới"?" g":"")+'">'+p[4]+'</span>':'')+
         '<button class="pick" type="button" aria-label="Chọn '+p[1]+'">'+(on?'✓':'+')+'</button></div>'+
         '<div class="pb"><h3>'+p[1]+'</h3><p class="pspec">'+p[2]+'<br>'+p[3]+'</p>'+
